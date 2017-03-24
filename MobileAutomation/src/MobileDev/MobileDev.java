@@ -231,9 +231,9 @@ public class MobileDev {
 	 	  datestr=String.valueOf(date);
 	     
 	      userlogin(username,Password,searchStatus,CustName,Custcode);
-	     BulkRateUpdate(rateStatus);
-	     BulkInvUpdate(invStatus);
-	     BulkResUpdate(resStatus);
+	     //BulkRateUpdate(rateStatus);
+	     //BulkInvUpdate(invStatus);
+	     //BulkResUpdate(resStatus);
 	      driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'rates_updates')]")).click(); 
 	  		 RNA=RatePresentCheck();
 		    	if(RNA)
