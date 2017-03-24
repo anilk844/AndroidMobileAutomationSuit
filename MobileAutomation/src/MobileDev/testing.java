@@ -34,7 +34,7 @@ public class testing {
 		SimpleDateFormat DF = new SimpleDateFormat("dd-MM-yyyy");
 	    Calendar RC = Calendar.getInstance();
 	    String start=DF.format(RC.getTime());
-	    File source=new File("D:/WorkSpace/ibv4_code/AndroidMobileAutomation/test-output/MobileHealth-Jenkins/MobileHealth-Jenkins.html");
+	    File source=new File("C:/Users/anil.kumar/git/AndroidMobileAutomation/MobileAutomation/test-output/MobileHealth-Jenkins/MobileHealth-Jenkins.html");
 	    System.out.println("anil");
 		//File source = new File("D:/WorkSpace/ibv4_code/MobileTest/test-output/AndroidMobileAutomation/Mobile Android Automation.html");
 		File dest = new File("D:/Android Daily report/AndroidReport-"+start+".html");
@@ -100,7 +100,7 @@ public class testing {
 
 	       // Part two is attachment
 	       messageBodyPart = new MimeBodyPart();
-	       String filename = "D:/WorkSpace/ibv4_code/AndroidMobileAutomation/test-output/MobileHealth-Jenkins/MobileHealth-Jenkins.html";
+	       String filename = "C:/Users/anil.kumar/git/AndroidMobileAutomation/MobileAutomation/test-output/MobileHealth-Jenkins/MobileHealth-Jenkins.html";
 	       DataSource source = new FileDataSource(filename);
 	       messageBodyPart.setDataHandler(new DataHandler(source));
 	       messageBodyPart.setFileName(filename);
