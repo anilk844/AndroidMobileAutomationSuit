@@ -1,17 +1,457 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="4" total="4" passed="0">
   <reporter-output>
+    <line>
+      <![CDATA[<font font-family='Times New Roman'>Customer Search--</font><font color='blue' >PASS</font></a>]]>
+    </line>
+    <line>
+      <![CDATA[<font font-family='Times New Roman'>Statistic Page--</font><font color='blue'>PASS</font></a>]]>
+    </line>
   </reporter-output>
-  <suite name="MobileHealth-Jenkins" duration-ms="4963" started-at="2017-03-24T08:41:54Z" finished-at="2017-03-24T08:41:59Z">
+  <suite name="Default suite" duration-ms="503361" started-at="2017-04-05T08:22:05Z" finished-at="2017-04-05T08:30:28Z">
     <groups>
     </groups>
-    <test name="SendMail-Jenkins" duration-ms="4963" started-at="2017-03-24T08:41:54Z" finished-at="2017-03-24T08:41:59Z">
-      <class name="MobileDev.testing">
-        <test-method status="PASS" signature="execute()[pri:0, instance:MobileDev.testing@27f674d]" name="execute" duration-ms="4953" started-at="2017-03-24T14:11:54Z" finished-at="2017-03-24T14:11:59Z">
+    <test name="Default test" duration-ms="503361" started-at="2017-04-05T08:22:05Z" finished-at="2017-04-05T08:30:28Z">
+      <class name="MobileDev.MobileDev">
+        <test-method status="FAIL" signature="startAutomation(java.lang.String, [C, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MobileDev.MobileDev@2ed94a8b]" name="startAutomation" duration-ms="410294" started-at="2017-04-05T13:52:05Z" data-provider="data" finished-at="2017-04-05T13:58:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[superuser@reznext.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[C@49912c99]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Breeze]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[3241]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Timed out after 300 seconds waiting for presence of element located by: By.xpath: //android.widget.TextView[contains(@resource-id,'message')]
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
+System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
+Session ID: 4049de71-373d-4389-939a-c9f2889f5d6c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Timed out after 300 seconds waiting for presence of element located by: By.xpath: //android.widget.TextView[contains(@resource-id,'message')]
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
+System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
+Session ID: 4049de71-373d-4389-939a-c9f2889f5d6c
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:79)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at MobileDev.MobileDev.BulkRateUpdate(MobileDev.java:542)
+	at MobileDev.MobileDev.startAutomation(MobileDev.java:228)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 15.07 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
+System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
+Session ID: 4049de71-373d-4389-939a-c9f2889f5d6c
+	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$0(ExpectedConditions.java:728)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	... 26 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Customer Search--</font><font color='blue' >PASS</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Statistic Page--</font><font color='blue'>PASS</font></a>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- startAutomation -->
+        <test-method status="FAIL" signature="startAutomation(java.lang.String, [C, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MobileDev.MobileDev@2ed94a8b]" name="startAutomation" duration-ms="30857" started-at="2017-04-05T13:58:56Z" data-provider="data" finished-at="2017-04-05T13:59:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[anil.kumarPA@reznext.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[C@10163d6]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Hotel Poornima]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[5162]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 15.44 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
+System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
+Session ID: 4049de71-373d-4389-939a-c9f2889f5d6c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 15.44 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
+System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
+Session ID: 4049de71-373d-4389-939a-c9f2889f5d6c
+	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at MobileDev.MobileDev.userlogin(MobileDev.java:308)
+	at MobileDev.MobileDev.startAutomation(MobileDev.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- execute -->
-      </class> <!-- MobileDev.testing -->
-    </test> <!-- SendMail-Jenkins -->
-  </suite> <!-- MobileHealth-Jenkins -->
+        </test-method> <!-- startAutomation -->
+        <test-method status="FAIL" signature="startAutomation(java.lang.String, [C, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MobileDev.MobileDev@2ed94a8b]" name="startAutomation" duration-ms="30984" started-at="2017-04-05T13:59:26Z" data-provider="data" finished-at="2017-04-05T13:59:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[reznextuser@reznext.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[C@2dde1bff]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Breeze]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[3241]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 15.47 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
+System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
+Session ID: 4049de71-373d-4389-939a-c9f2889f5d6c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 15.47 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
+System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
+Session ID: 4049de71-373d-4389-939a-c9f2889f5d6c
+	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at MobileDev.MobileDev.userlogin(MobileDev.java:308)
+	at MobileDev.MobileDev.startAutomation(MobileDev.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startAutomation -->
+        <test-method status="FAIL" signature="startAutomation(java.lang.String, [C, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MobileDev.MobileDev@2ed94a8b]" name="startAutomation" duration-ms="30957" started-at="2017-04-05T13:59:57Z" data-provider="data" finished-at="2017-04-05T14:00:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[poornimagroup@reznext.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[C@15bbf42f]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Hotel Poornima]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[5162]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 15.47 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
+System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
+Session ID: 4049de71-373d-4389-939a-c9f2889f5d6c]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 15.47 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
+System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
+Session ID: 4049de71-373d-4389-939a-c9f2889f5d6c
+	at sun.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at MobileDev.MobileDev.userlogin(MobileDev.java:308)
+	at MobileDev.MobileDev.startAutomation(MobileDev.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
+	at org.testng.TestNG.run(TestNG.java:1009)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startAutomation -->
+      </class> <!-- MobileDev.MobileDev -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

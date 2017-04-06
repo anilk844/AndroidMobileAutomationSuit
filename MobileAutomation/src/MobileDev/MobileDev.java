@@ -172,7 +172,8 @@ public class MobileDev {
 	       capabilities.setCapability("platformName", "Android");
 	       capabilities.setCapability("platformVersion", "6.0.1");
 		   capabilities.setCapability("deviceName", "Android");
-		  //capabilities.setCapability("deviceName", "Nexus6:5554");
+		   capabilities.setCapability("deviceName", "Nexus6:5554");
+		   //capabilities.setCapability("deviceName", "55e47394");
 		 
 		  //Set BROWSER_NAME desired capability. It's Android in our case here.
 		  //capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android");
@@ -186,22 +187,15 @@ public class MobileDev {
 		  // com.android.calculator2 for calculator application.
 		  // Set your application's appPackage if you are using any other app.
 		  capabilities.setCapability("appPackage", "com.android.launcher3");
-		  System.out.println("5");
-		  //capabilities.setCapability("appPackage", "com.android.launcher");
-
 		  // Set android appActivity desired capability. It is
 		  // com.android.calculator2.Calculator for calculator application.
 		  // Set your application's appPackage if you are using any other app.
-		 
 		  capabilities.setCapability("appActivity", "com.android.launcher3.Launcher");
-		  
-		  //capabilities.setCapability("appActivity", "com.android.launcher2.Launcher");
-
 		  //capabilities.setCapability("appActivity", "com.android.email.activity.setup.AccountSetupFinal");
 		  //Created object of RemoteWebDriver will all set capabilities.
 		  //Set appium server address and port number in URL string.
 		  //It will launch calculator app in android device.
-		   driver = new RemoteWebDriver(new URL(appiumServiceUrl), capabilities);
+		  driver = new RemoteWebDriver(new URL(appiumServiceUrl), capabilities);
 		  try
 		  {
 		  //driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
@@ -231,9 +225,9 @@ public class MobileDev {
 	 	  datestr=String.valueOf(date);
 	     
 	      userlogin(username,Password,searchStatus,CustName,Custcode);
-	     //BulkRateUpdate(rateStatus);
-	     //BulkInvUpdate(invStatus);
-	     //BulkResUpdate(resStatus);
+	      BulkRateUpdate(rateStatus);
+	      BulkInvUpdate(invStatus);
+	      BulkResUpdate(resStatus);
 	      driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'rates_updates')]")).click(); 
 	  		 RNA=RatePresentCheck();
 		    	if(RNA)
@@ -310,7 +304,7 @@ public class MobileDev {
 	    	{
 	    		
 	    	}
-	  	    Thread.sleep(2000);
+	  	    
 	  	    driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'et_username')]")).sendKeys(Username);
 	  	  
 	  	    String passdec=decryption(password);
@@ -425,8 +419,17 @@ public class MobileDev {
 	  		 //Statistics page validation check
 	  		 int[] staticindex={0,4,23,2};
 	  		 int staticcount=0;
-	  		 String[] staticvalue={"ARR","RNS","LOS","PACE"};
-	  		 for(int i=0;i<staticindex.length;i++)
+	  		 String[] staticvalue={"ARR","LOS","RNS","PACE"};
+	  		for(int i=0;i<staticindex.length;i++)
+	  		{
+	  			 String actualvalue="";
+	  			 actualvalue=driver.findElement(By.xpath("//android.widget.TextView[@text='"+staticvalue[i]+"']")).getText();
+	  			 if(actualvalue.equalsIgnoreCase(staticvalue[i]))
+	  			 {
+	  				 staticcount++;
+	  			 }
+	  		}
+	  		 /*for(int i=0;i<staticindex.length;i++)
 	  		 {
 	  			 String actualvalue="";
 	  			 int val=staticindex[i];
@@ -450,7 +453,7 @@ public class MobileDev {
 	  				// System.out.println(strvalue);
 	  				 staticcount++;
 	  			 }
-	  		 }
+	  		 }*/
 	  		 if(staticcount==4)
 	  	     {
 	  		  //System.out.println("Statistic page pass");
@@ -506,7 +509,7 @@ public class MobileDev {
 	    	 switch(i)
 	    	 {
 	    	 case 1:
-	    	 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess') and @index='0']")).click();
+	    	 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess')]")).click();
 		     Bulkratecheck=1;
 		     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
 		     Bulkratecheck=2;
@@ -555,7 +558,7 @@ public class MobileDev {
 		     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess') and @index='0']")));
 			 break;
 	    	 case 2:
-	    		 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess') and @index='0']")).click();
+	    		 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess')]")).click();
 			     Bulkratecheck=1;
 			     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
 			     Bulkratecheck=2;
@@ -601,7 +604,7 @@ public class MobileDev {
 			     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess') and @index='0']")));
 			     break;
 	    	 case 3:
-	    		 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess') and @index='0']")).click();
+	    		 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess')]")).click();
 			     Bulkratecheck=1;
 			     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
 			     Bulkratecheck=2;
@@ -648,7 +651,7 @@ public class MobileDev {
 			     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess') and @index='0']")));
 			     break;
 	    	 case 4:
-	    		 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess') and @index='0']")).click();
+	    		 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess')]")).click();
 			     Bulkratecheck=1;
 			     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
 			     Bulkratecheck=2;
@@ -792,16 +795,17 @@ public class MobileDev {
 			     driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates') and @text='Update Bulk RESTRICTION']")).click();	
 			     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 			     String restrictionStatus=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-			     if(restrictionStatus.startsWith("Your Request has been Processed to"))
+			     if(restrictionStatus.startsWith("Your bulk Restriction request has been processed"))
 			     {
-			    	  Reporter.log("<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS</font></a>", true);
+			    	 
+			    	  Reporter.log("<font font-family='Times New Roman'>Your bulk Restriction Update--</font><font color='blue'>PASS</font></a>", true);
 			    	  //Reporter.log("Selected Date Restriction Update--PASS");
 			    	  Thread.sleep(2000);
 			    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
 			     }
 			     else
 			     {
-			    	 Reporter.log("<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='red'>FAIL("+restrictionStatus+")</font></a>", true);
+			    	 Reporter.log("<font font-family='Times New Roman'>Your bulk Restriction Update--</font><font color='red'>FAIL("+restrictionStatus+")</font></a>", true);
 			    	 Thread.sleep(2000);
 			    	 //Reporter.log("<font color='red'>Selected Date Restriction Update--FAIL("+restrictionStatus+")</font></a>", true);
 			    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
@@ -876,7 +880,7 @@ public class MobileDev {
 			 }
 			 
 			 //update Rates
-			 driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'saverates') and @text='Rate']")).click();
+			 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'images_rate') and @index='0']")).click();
 			 //Update single and double rates,extra child and extra adult
 			 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'single_rate')]")).sendKeys("1000");
 			 
@@ -885,7 +889,7 @@ public class MobileDev {
 			 //driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'extra_adult')]")).sendKeys("1005");
 			 
 			 //clickon select channel icon button
-			 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'icon_edit')]")).click();
+			 //-----driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'icon_edit')]")).click();
 			 
 			 //click on update rate button 
 			 robot =new Robot();
@@ -990,7 +994,7 @@ public class MobileDev {
 			 
 			 
 	         //click on select channel icon button
-			 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'icon')]")).click();
+			 //-----driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'icon')]")).click();
 	    	 
 			 robot =new Robot();
 			 robot.keyPress(KeyEvent.VK_CONTROL);
@@ -1089,7 +1093,7 @@ public class MobileDev {
 			     {
 			    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'open_room') and @text='Open Room']")).click();
 			     }
-			     driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'edit_icon')]")).click();
+			    //--- driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'edit_icon')]")).click();
 			    
 			     driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'update_restriction')]")).click();	
 			     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
@@ -1160,7 +1164,7 @@ public class MobileDev {
 	    	{
 	    	if(rateStatus.equalsIgnoreCase("1"))
 	    	 {
-	    	 driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'saverates') and @text='Rate']")).click();
+	    	 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'images_rate') and @index='0']")).click();
 	    	 calendarselection(); 
 	    	 
 	    	
@@ -1188,7 +1192,7 @@ public class MobileDev {
 			 
 			 //clickon select channel icon button
 			 
-			 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'icon_edit')]")).click();
+			//-- driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'icon_edit')]")).click();
 			 
 			 //click on update rate button 
 			  Thread.sleep(2000);
@@ -1276,7 +1280,7 @@ public class MobileDev {
 			 
 			 
 	         //click on select channel icon button
-			 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'icon')]")).click();
+			//-- driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'icon')]")).click();
 	    	 
 			 robot =new Robot();
 			 robot.keyPress(KeyEvent.VK_CONTROL);
@@ -1372,7 +1376,7 @@ public class MobileDev {
 			    	 calendarselection();
 			    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'open_room') and @text='Open Room']")).click();
 			     }
-			     driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'edit_icon')]")).click();
+			   //--  driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'edit_icon')]")).click();
 			     
 				/* robot =new Robot();
 				 robot.keyPress(KeyEvent.VK_CONTROL);
