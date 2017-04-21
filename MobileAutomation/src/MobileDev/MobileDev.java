@@ -40,6 +40,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -225,9 +227,9 @@ public class MobileDev {
 	 	  datestr=String.valueOf(date);
 	     
 	      userlogin(username,Password,searchStatus,CustName,Custcode);
-	      BulkRateUpdate(rateStatus);
-	      BulkInvUpdate(invStatus);
-	      BulkResUpdate(resStatus);
+	      //BulkRateUpdate(rateStatus);
+	      //BulkInvUpdate(invStatus);
+          //BulkResUpdate(resStatus);
 	      driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'rates_updates')]")).click(); 
 	  		 RNA=RatePresentCheck();
 		    	if(RNA)
@@ -280,10 +282,10 @@ public class MobileDev {
 				               };*/
 		  
 	  Object[][] datavalue={ 
-	                {"superuser@reznext.com",Encryption("Test@321"),"1","1","1","1","Breeze","3241"},
-	                {"anil.kumarPA@reznext.com",Encryption("Test@123"),"0","1","1","1","Hotel Poornima","5162"},
-	                {"reznextuser@reznext.com",Encryption("Test@123"),"1","0","0","0","Breeze","3241"},
-	                {"poornimagroup@reznext.com",Encryption("Test@123"),"1","1","1","1","Hotel Poornima","5162"}
+	               {"superuser@reznext.com",Encryption("Test@321"),"1","1","1","1","Breeze","3241"},
+	               {"anil.kumarPA@reznext.com",Encryption("Test@123"),"0","1","1","1","Hotel Poornima","5162"},
+	               {"reznextuser@reznext.com",Encryption("Test@123"),"1","0","0","0","Breeze","3241"},
+	               {"poornimagroup@reznext.com",Encryption("Test@123"),"1","1","1","1","Hotel Poornima","5162"}
 	               };
 
 		  return datavalue;
@@ -527,8 +529,8 @@ public class MobileDev {
 			 //click on update rate button 
 			// for(int p=0;p<3;p++)
 			 //{
-			 robot =new Robot();
-			 Thread.sleep(2000);
+			robot =new Robot();
+			 //Thread.sleep(2000);
 			 robot.keyPress(KeyEvent.VK_CONTROL);
 			 robot.keyPress(KeyEvent.VK_BACK_SPACE); 
 			 robot.keyRelease(KeyEvent.VK_BACK_SPACE);
@@ -631,7 +633,7 @@ public class MobileDev {
 				 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
 				 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
 				 
-			     driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")).click();
+ driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")).click();
 				 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 			     String RateStatus2=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
 			     if(RateStatus2.equalsIgnoreCase("\"Your bulk Rate request has been processed!\""))
@@ -872,7 +874,7 @@ public class MobileDev {
 	    	 if(rateStatus.equalsIgnoreCase("1"))
 	    	 {
 	    	
-			 int[] day={18,19};
+			 int[] day={18,19,20};
 			 for(int d :day)
 			 {
 			 driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+d+"']")).click();
@@ -880,8 +882,11 @@ public class MobileDev {
 			 }
 			 
 			 //update Rates
-			 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'images_rate') and @index='0']")).click();
+			 driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'saverates') and @text='Rate']")).click();
 			 //Update single and double rates,extra child and extra adult
+			 //Actions action =new Actions(driver);
+	    	 //action.moveToElement(driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'single_rate')]"))).doubleClick().build().perform();
+			 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'single_rate')]")).click();
 			 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'single_rate')]")).sendKeys("1000");
 			 
 			 //driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'double_rate')]")).sendKeys("6024");
@@ -1164,10 +1169,10 @@ public class MobileDev {
 	    	{
 	    	if(rateStatus.equalsIgnoreCase("1"))
 	    	 {
-	    	 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'images_rate') and @index='0']")).click();
+	    	 driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'saverates') and @text='Rate']")).click();
 	    	 calendarselection(); 
-	    	 
-	    	
+	    	 Actions action=new Actions(driver);
+	    	// action.moveToElement(driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'single_rate')]"))).doubleClick().build().perform();
 			 //Update single and double rates,extra child and extra adult
 			 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'single_rate')]")).sendKeys("1000");
 			 //driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'double_rate')]")).sendKeys("6500");
@@ -1195,12 +1200,13 @@ public class MobileDev {
 			//-- driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'icon_edit')]")).click();
 			 
 			 //click on update rate button 
+			
 			  Thread.sleep(2000);
 			  robot =new Robot();
 			  robot.keyPress(KeyEvent.VK_CONTROL);
 			  robot.keyPress(KeyEvent.VK_BACK_SPACE);
 			  robot.keyRelease(KeyEvent.VK_CONTROL);
-			 robot.keyRelease(KeyEvent.VK_BACK_SPACE);
+			  robot.keyRelease(KeyEvent.VK_BACK_SPACE);
 			
 			 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done')]")).click();
 			 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
@@ -1432,7 +1438,7 @@ public class MobileDev {
 	 	      String start=DF.format(RC.getTime());
 	 	      System.out.println(start);
 	 	      String stratdate[]=start.split("-");
-	 	      RC.add(Calendar.DATE, 20);
+	 	      RC.add(Calendar.DATE, 10);
 	 	      String end=DF.format(RC.getTime());
 	 	  
 	 	      String enddate[]=end.split("-");
