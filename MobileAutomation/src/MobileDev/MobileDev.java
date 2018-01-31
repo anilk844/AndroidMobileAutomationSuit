@@ -135,7 +135,7 @@ public class MobileDev {
 	  @Test(priority=1,dataProvider="data")
 	  public static void startAutomation(String username,char[] Password,String searchStatus,String rateStatus,String invStatus,String resStatus,String CustName,String Custcode)throws InterruptedException, AWTException, IOException
 	  {
-	
+	      //
 		  //RateCode available/ not 
 		  RNA=false;
 		  //Ratecode to be extecuted or not 
