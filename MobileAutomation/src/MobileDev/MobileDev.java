@@ -57,9 +57,7 @@ import com.sun.jna.platform.FileUtils;
 
 public class MobileDev {
 	  public static DesiredCapabilities capabilities;
-	 // public static AppiumDriverLocalService appiumService;
-	  
-	  
+	
 	  
 	  public static String appiumServiceUrl;
 	  public static AppiumDriverLocalService appiumService;
@@ -72,10 +70,11 @@ public class MobileDev {
 	  public static WebDriver driver;
       public static WebDriverWait wait;
 	  public static Robot robot;
-	  public static int[] invday={18,19};
+	  public static int[] invday={23,24};
+	  public static int[] Rateday={25,26};
 	  public static String[] month={"","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
-	  public static String[] monthdesc= {"","", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-	  public static   String ActualStartdate;
+	  public static String[] monthdesc= {"","January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+	  public static   String ActualStartmonth;
 	  public static   String ActualEnddate;
 	  public static String []goldengroup={"Manali","Lucknow","Delhi",
               "Gurgaon","Chattarpur","Chandigarh","Ahmedabad","Goa",
@@ -92,25 +91,18 @@ public class MobileDev {
 	  {
 		// Created object of DesiredCapabilities class.
            
-		   //String Appium_Node_Path="C:/Program Files (x86)/Appium/node.exe";
-		   //String Appium_JS_Path="C:/Program Files (x86)/Appium/node_modules/appium/bin/appium.js";
-
-
-          //Process p = Runtime.getRuntime().exec("\"C:/Program Files (x86)/Appium/node.exe\" \"C:/Program Files (x86)/Appium/node_modules/appium/bin/appium.js\" --no-reset --local-timezone");
-
-		  //Random rand = new Random();
-		  //RandomNum = rand.nextInt((150-1) + 1) + 1;
+	
 	       capabilities = new DesiredCapabilities();
 
 		  // Set android deviceName desired capability. Set your device name.
-		  //capabilities.setCapability("deviceName", "LowerMobileVersion:5554");
+		  
 		  capabilities.setCapability("deviceName", "Nexus6:5554");
 
 		  // Set BROWSER_NAME desired capability. It's Android in our case here.
 		  capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android");
 
 		  // Set android VERSION desired capability. Set your mobile device's OS version.
-		 //capabilities.setCapability(CapabilityType.VERSION, "4.4.2");
+		 
 		  capabilities.setCapability(CapabilityType.VERSION, "6.0.1");
 
 		  // Set android platformName desired capability. It's Android in our case here.
@@ -120,20 +112,17 @@ public class MobileDev {
 		  // com.android.calculator2 for calculator application.
 		  // Set your application's appPackage if you are using any other app.
 		  capabilities.setCapability("appPackage", "com.android.launcher3");
-		  //capabilities.setCapability("appPackage", "com.android.launcher");
+		 
 
 		  // Set android appActivity desired capability. It is
 		  // com.android.calculator2.Calculator for calculator application.
 		  // Set your application's appPackage if you are using any other app.
 		 
 		  capabilities.setCapability("appActivity", "com.android.launcher3.Launcher");
-		  //capabilities.setCapability("appActivity", "com.android.launcher2.Launcher");
-
-		  //capabilities.setCapability("appActivity", "com.android.email.activity.setup.AccountSetupFinal");
+		  
 		  //Created object of RemoteWebDriver will all set capabilities.
 		  //Set appium server address and port number in URL string.
 		  //It will launch calculator app in android device.
-		  
 		  driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		 
 		  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -146,42 +135,40 @@ public class MobileDev {
 	  @Test(priority=1,dataProvider="data")
 	  public static void startAutomation(String username,char[] Password,String searchStatus,String rateStatus,String invStatus,String resStatus,String CustName,String Custcode)throws InterruptedException, AWTException, IOException
 	  {
-		// Created object of DesiredCapabilities class.
-		  
+	
+		  //RateCode available/ not 
 		  RNA=false;
+		  //Ratecode to be extecuted or not 
 		  execute=true;
 		  count++;
 		  if(switchcontrol==0)
-		  {
-			  System.out.println("NEW");
-			  System.out.println("HI");
+		  {		
+			  //This loop is executed only once to set capabilities
+			  //Google code starts here for appium to start inbuilt 
 			   String Appium_Node_Path="C:/Program Files (x86)/Appium/node.exe";
 			   String Appium_JS_Path="C:/Program Files (x86)/Appium/node_modules/appium/bin/appium.js";
-	
+			   
+			   //Appium service path 
 			   appiumService = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().
 		                usingAnyFreePort().usingDriverExecutable(new File(Appium_Node_Path)).
 		                withAppiumJS(new File(Appium_JS_Path)));
 			  
+			   
 			   appiumServiceUrl = appiumService.getUrl().toString();
 	          appiumService.start();
 	         
+	          //Google code ends here for appium to start inbuilt
 	         // Thread.sleep(10000);
 	          
 			
-			  //Process p = Runtime.getRuntime().exec("\"C:/Program Files (x86)/Appium/node.exe\" \"C:/Program Files (x86)/Appium/node_modules/appium/bin/appium.js\" --no-reset --local-timezone");
+			
 	       capabilities = new DesiredCapabilities();
 	       capabilities.setCapability("appium-version", "1.4.13.1");
 	       capabilities.setCapability("platformName", "Android");
 	       capabilities.setCapability("platformVersion", "6.0.1");
 		   capabilities.setCapability("deviceName", "Android");
 		   capabilities.setCapability("deviceName", "Nexus6:5554");
-		   //capabilities.setCapability("deviceName", "55e47394");
-		 
-		  //Set BROWSER_NAME desired capability. It's Android in our case here.
-		  //capabilities.setCapability(CapabilityType.BROWSER_NAME, "Android");
-	      //Set android VERSION desired capability. Set your mobile device's OS version.
-		  //capabilities.setCapability(CapabilityType.VERSION, "4.4.2");
-		  //capabilities.setCapability(CapabilityType.VERSION, "6.0.1");
+		   
 		
 
 		  // Set android platformName desired capability. It's Android in our case here
@@ -198,18 +185,11 @@ public class MobileDev {
 		  //Set appium server address and port number in URL string.
 		  //It will launch calculator app in android device.
 		  driver = new RemoteWebDriver(new URL(appiumServiceUrl), capabilities);
-		  try
-		  {
-		  //driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-		  }
-		  catch(Exception e )
-		  {
-			  System.out.println(e);
-		  }
-		  System.out.println("out1");
+		  
+		  
 		  driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		  wait=new WebDriverWait(driver, 300);
-		  System.out.println("out");
+		
 		  
 		  }
 		  switchcontrol++;
@@ -221,15 +201,17 @@ public class MobileDev {
 		  SimpleDateFormat DF = new SimpleDateFormat("dd-MM-yyyy");
 	 	  Calendar RC = Calendar.getInstance();
 	 	  String start=DF.format(RC.getTime());
-	 	  System.out.println(start);
+	 	  
 	 	  String stratdate[]=start.split("-");
 	 	  int date=Integer.parseInt(stratdate[0]);
 	 	  datestr=String.valueOf(date);
 	     
+	 	  //Parameters for userlogin Method 
 	      userlogin(username,Password,searchStatus,CustName,Custcode);
-	      //BulkRateUpdate(rateStatus);
-	      //BulkInvUpdate(invStatus);
-          //BulkResUpdate(resStatus);
+	      BulkRateUpdate(rateStatus);
+	      BulkInvUpdate(invStatus);
+          BulkResUpdate(resStatus);
+          
 	      driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'rates_updates')]")).click(); 
 	  		 RNA=RatePresentCheck();
 		    	if(RNA)
@@ -243,18 +225,21 @@ public class MobileDev {
 		    		
 		    	}
 		    	if(execute)
-		    	{//rate and inventory update button
+		    	{
+		    	//rate and inventory update button
 	  		    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
 	    	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
+	    	    SlectedrateUpdate(rateStatus);
+	   	        selectedInvUpdate(invStatus);
+	   	        selectedResUpdate(resStatus); 
+	   	        RateDateRangeUpdate(rateStatus);
+	   	        InvDateRange(invStatus);
+	   	        ResDateRange(resStatus);
+	   	       logout();	
 	    	}
-	     SlectedrateUpdate(rateStatus);
-	     selectedInvUpdate(invStatus);
-	     selectedResUpdate(resStatus); 
-	     RateDateRangeUpdate(rateStatus);
-	     InvDateRange(invStatus);
-	     ResDateRange(resStatus);
-	     logout();	
-	     //System.out.println("LogOut");
+	     
+	    
+	   
 	      
 	     
 	     
@@ -267,46 +252,45 @@ public class MobileDev {
 	  @DataProvider
 	  public static Object[][] data()
 	  {
-		  randomNum = rand.nextInt((150-1) + 1) + 1;
+		  randomNum = rand.nextInt((150-1) + 1) + 1;//to generate range random values
 
-		 // String superuser=EncryDecry.Encryption("Bangalore@777");
-		  
-		 // String crsdemo=EncryDecry.Encryption("Reznext@123");
-		  //String iosrez=EncryDecry.Encryption("Reznext@123");
-		  //String sachin=EncryDecry.Encryption("Reznext@123");
+		  //Live credentials 
 		  /*Object[][] datavalue={ 
 				                {"superuser@reznext.com",Encryption("Bangalore@777"),"1","1","1","1","The Pearl","77777"},
 				                {"crsdemouser",Encryption("Reznext@123"),"1","1","1","1","W Maldives","103653"},
 				                {"ios@reznext.com",Encryption("Reznext@123"),"0","1","1","1","Nayara Springs","103638"},
 				                {"sachin.upadhyay@goldentulipindia.com",Encryption("Reznext@123"),"2","0","0","0","Golden Tulip Manali","714"}
 				               };*/
-		  
-	  Object[][] datavalue={ 
-	               {"superuser@reznext.com",Encryption("Test@321"),"1","1","1","1","Breeze","3241"},
-	               {"anil.kumarPA@reznext.com",Encryption("Test@123"),"0","1","1","1","Hotel Poornima","5162"},
-	               {"reznextuser@reznext.com",Encryption("Test@123"),"1","0","0","0","Breeze","3241"},
-	               {"poornimagroup@reznext.com",Encryption("Test@123"),"1","1","1","1","Hotel Poornima","5162"}
-	               };
+		  //Test credentials 
+	      Object[][] datavalue={ 
+	              
+	               //{"anil.kumarPA@reznext.com",Encryption("Test@123"),"0","1","1","1","Hotel Poornima","5162"},
+	               //{"reznextuser@reznext.com",Encryption("Test@123"),"1","1","1","1","Breeze","3241"},
+	               //{"superuser@reznext.com",Encryption("Test@321"),"1","1","1","1","Breeze","3241"},
+	    		   //After password, the next integer if it is 0 properties aren't searched(ie, property user), 1 property admin and 2 is group admin
+	    			
+	              {"whiterose@reznext.com",Encryption("Test@321"),"0","1","1","1","White Rose   Bengaluru","1947"}
+	              //username 						//password //usertype //ARI//Property name			//propertycode															
+	              };
 
 		  return datavalue;
 	  }
 	  
-	  public static void logindata()
-	  {
-		 
-	  }
-	  
+	
 	    public static void userlogin(String Username,char[] password,String searchStatus,String CustName,String CustCode) throws InterruptedException, AWTException
 	    {
 	    	try
 	    	{
-	    		driver.findElement(By.xpath("//android.widget.TextView[@index='3']")).click();
+
+              //red app icon click 
+	    		driver.findElement(By.xpath("//android.view.ViewGroup[@index='1']/android.widget.TextView[@index='3']")).click();
 	    	}
 	    	catch(Exception e)
 	    	{
 	    		
 	    	}
 	  	    
+	    	//Credentials 
 	  	    driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'et_username')]")).sendKeys(Username);
 	  	  
 	  	    String passdec=decryption(password);
@@ -320,15 +304,15 @@ public class MobileDev {
 	    {
 	  		 //Search and selecting property 
 	  		
-	  		 if(SearchStatus.equalsIgnoreCase("1"))
+	  		 if(SearchStatus.equalsIgnoreCase("1")) //1 ==> property search enabled
 	  		 {
 	  		 int custSearch=0;
-	  		 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.EditText[contains(@resource-id,'et_selectproperty_search')]")));
-	  		 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'et_selectproperty_search')]")).sendKeys(Custcode);
-	  		 WebElement layout=driver.findElement(By.xpath("//android.widget.FrameLayout"));
+	  		 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.EditText[contains(@resource-id,'et_selectproperty_search')]"))); //waiting for search box to display
+	  		 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'et_selectproperty_search')]")).sendKeys(Custcode); 
+
 	  		 Thread.sleep(2000);
-	  		 List<WebElement> searchlayout=driver.findElements(By.xpath("//android.widget.TextView[contains(@resource-id,'thumbnail')]"));
-	  		 System.out.println(searchlayout.size());
+	  		 List<WebElement> searchlayout=driver.findElements(By.xpath("//android.widget.TextView[contains(@resource-id,'thumbnail')]")); // Search customer based on customer name add it to the list 
+	  		
 	  		 for(WebElement e:searchlayout)
 	  		 {
 	  			 if(e.getText().equalsIgnoreCase(CustName))
@@ -344,6 +328,7 @@ public class MobileDev {
 	  			//Reporter.log("Customer Search--FAIL");
 	  		 }
 	  		 }
+	  		 //group search starts here
 	  		 if(SearchStatus.equalsIgnoreCase("2"))
 	  		 {
 	  			 int GroupCustSearch=0;
@@ -391,8 +376,6 @@ public class MobileDev {
 	  				Reporter.log("<font font-family='Times New Roman'>GroupLogin Customer Count--</font><font color='red'>FAIL</font></a>", true);
 	  				//Reporter.log("GroupLogin Customer Count--FAIL");
 	  			}
-	  			System.out.println(count);
-	  			
 	  			
 	  			//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.EditText[contains(@resource-id,'et_selectproperty_search')]")));
 		  		driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'et_selectproperty_search')]")).sendKeys(Custcode);
@@ -418,11 +401,15 @@ public class MobileDev {
 	  				//Reporter.log("<font color='red'>GroupLogin Customer Search--FAIL</font></a>", true);
 	  			  }
 	  		 }
+	  		 
+	  		 //group search ends here
+	  		 
+	  		 
 	  		 //Statistics page validation check
-	  		 int[] staticindex={0,4,23,2};
-	  		 int staticcount=0;
-	  		 String[] staticvalue={"ARR","LOS","RNS","PACE"};
-	  		for(int i=0;i<staticindex.length;i++)
+	  		
+	  		int staticcount=0;
+	  		String[] staticvalue={"ARR","LOS","RNS","PACE"}; //checking for this string and not comparing any values
+	  		for(int i=0;i<staticvalue.length;i++)
 	  		{
 	  			 String actualvalue="";
 	  			 actualvalue=driver.findElement(By.xpath("//android.widget.TextView[@text='"+staticvalue[i]+"']")).getText();
@@ -431,68 +418,19 @@ public class MobileDev {
 	  				 staticcount++;
 	  			 }
 	  		}
-	  		 /*for(int i=0;i<staticindex.length;i++)
-	  		 {
-	  			 String actualvalue="";
-	  			 int val=staticindex[i];
-	  			 String strvalue=staticvalue[i];
-	  			 if(val==0)
-	  			 {
-	  			     actualvalue=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'textView')]")).getText();
-	  			 }
-	  			 else if(val==2)
-	  			 
-	  			 {
-	  				 actualvalue=driver.findElement(By.xpath("//android.widget.TextView[@text='PACE']")).getText();
-	  			 }
-	  			 else
-	  			 {
-	  				 actualvalue=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'textView"+val+"')]")).getText();
-	  			 }
-	  			 
-	  			 if(strvalue.equals(actualvalue))
-	  			 {
-	  				// System.out.println(strvalue);
-	  				 staticcount++;
-	  			 }
-	  		 }*/
+	 
 	  		 if(staticcount==4)
 	  	     {
-	  		  //System.out.println("Statistic page pass");
+	  		 
 	  		  Reporter.log("<font font-family='Times New Roman'>Statistic Page--</font><font color='blue'>PASS</font></a>", true);
-	  		  //Reporter.log("Statistic page pass--PASS");
+	  		  
 	  	     }
 	  		 else
 	  		 {
 	  			Reporter.log("<font font-family='Times New Roman'>Statistic Page--</font><font color='red'>FAIL</font></a>", true);
-	  			//Reporter.log("<font color='red'>Statistic page pass--FAIL</font></a>", true);
-	  			//Reporter.log("Statistic page pass--FAIL");
+	  			
 	  		 }
 	  		 
-	  		 
-	  		 //calendar page checks 
-	  	   
-	  		/* driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'rates_updates')]")).click(); 
- RNA=RatePresentCheck();
-		    	if(RNA)
-		    	{
-		    		execute=false;
-		    		System.out.println("Rate Not available");
-		    		Reporter.log("<font font-family='Times New Roman'>Calendar Page--</font><font color='red'>FAIL(Rates Not Available)</font></a>", true);
-		    		driver.findElement(By.xpath("//android.widget.ImageView[@content-desc='More options']")).click();
-				    driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'title') and @text='Logout']")).click();
-		    		
-		    		
-		    	}
-		    	if(execute)
-		    	{//rate and inventory update button
-	  		    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	    	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	    	}*/
-	  		 //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
-	  		 //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
-	  		// Thread.sleep(10000);
-	    	
 	    }
 	    
 	    
@@ -502,22 +440,19 @@ public class MobileDev {
 	    public static void  BulkRateUpdate(String rateStatus) throws InterruptedException, AWTException
 	    {
 	    	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess') and @index='0']")));
-	    	
 	    	if(rateStatus.equalsIgnoreCase("1"))
-	    	 {
-	    	
+	    	{
 	    	for(int i=1;i<=4;i++)
 	    	{
 	    	 switch(i)
 	    	 {
-	    	 case 1:
-	    	 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess')]")).click();
-		     Bulkratecheck=1;
-		     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
-		     Bulkratecheck=2;
-	    	 calendarselection(); 
 	    	 
-	    	
+	    	 case 1://for + and flat
+	    	 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess')]")).click();//bullk rate icon click
+		     Bulkratecheck=1;
+		     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));//waiting for "Update Bulk rate" to display
+		     Bulkratecheck=2;
+	    	 calendarselection();
 			 //Update single and double rates,extra child and extra adult
 	    	 driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'selcted_rates') and @text='Select Rate Code']")).click();
 	    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button2') and @text='Done']")));
@@ -529,7 +464,7 @@ public class MobileDev {
 			 //click on update rate button 
 			// for(int p=0;p<3;p++)
 			 //{
-			robot =new Robot();
+			 robot =new Robot();
 			 //Thread.sleep(2000);
 			 robot.keyPress(KeyEvent.VK_CONTROL);
 			 robot.keyPress(KeyEvent.VK_BACK_SPACE); 
@@ -537,15 +472,15 @@ public class MobileDev {
 			 robot.keyRelease(KeyEvent.VK_CONTROL);
 			 Thread.sleep(2000);
 			 //}
-	    	System.out.println("Anil kumar-------------------------------------------------------------------------------------------------------");
+	    	
 			 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
 			 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
 			  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")).click();
 			 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 		     String RateStatus=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-		     if(RateStatus.equalsIgnoreCase("\"Your bulk Rate request has been processed!\""))
+		     if(RateStatus.contains("Your bulk Rate request has been processed"))
 		     {
-		    	  Reporter.log("<font font-family='Times New Roman'>Bulk Range Rate Update with combination(+ , 0.0)--</font><font color='blue'>PASS</font></a>", true);
+		    	  Reporter.log("<font font-family='Times New Roman'>Bulk Range Rate Update with combination(+ , 0.0)--</font><font color='blue'>PASS("+RateStatus+")</font></a>", true);
 		    	  //Reporter.log("Slected Date Rate Update--PASS");
 		    	  Thread.sleep(1000);
 		    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
@@ -559,8 +494,8 @@ public class MobileDev {
 		     }
 		     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess') and @index='0']")));
 			 break;
-	    	 case 2:
-	    		 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess')]")).click();
+	    	 case 2: //for - and flat
+	    		 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess')]")).click();//again waiting for bulk rate icon and clicking on it
 			     Bulkratecheck=1;
 			     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
 			     Bulkratecheck=2;
@@ -589,9 +524,9 @@ public class MobileDev {
 				 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")).click();
 				 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 			     String RateStatus1=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-			     if(RateStatus1.equalsIgnoreCase("\"Your bulk Rate request has been processed!\""))
+			     if(RateStatus1.contains("Your bulk Rate request has been processed"))
 			     {
-			    	  Reporter.log("<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(- , 0.0)--</font><font color='blue'>PASS</font></a>", true);
+			    	  Reporter.log("<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(- , 0.0)--</font><font color='blue'>PASS("+RateStatus1+")</font></a>", true);
 			    	  //Reporter.log("Slected Date Rate Update--PASS");
 			    	  Thread.sleep(1000);
 			    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
@@ -605,7 +540,7 @@ public class MobileDev {
 			     }
 			     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess') and @index='0']")));
 			     break;
-	    	 case 3:
+	    	 case 3://for + and %ge
 	    		 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess')]")).click();
 			     Bulkratecheck=1;
 			     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
@@ -614,15 +549,20 @@ public class MobileDev {
 		    	 
 		    	
 				 //Update single and double rates,extra child and extra adult
+		    	 
+		    	 //default first rate code selection and clicking on Done in rate code selection popup---start
 		    	 driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'selcted_rates') and @text='Select Rate Code']")).click();
 		    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button2') and @text='Done']")));
 		    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button2') and @text='Done']")).click();
+		    	 //default first rate code selection and clicking on Done in rate code selection popup--end
 				 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'open_room') and @text='+']")).click();
 				 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'percetage') and @text='%']")).click();
 				 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'rate_data')]")).sendKeys("20");
 				 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'rate_data')]")).click();
 				 //click on update rate button 
 			
+				 
+				 //this is used to handle update bulk rate getting hidden on entry of rate ----key board function 
 				 robot =new Robot();
 				 Thread.sleep(2000);
 				 robot.keyPress(KeyEvent.VK_CONTROL);
@@ -633,12 +573,12 @@ public class MobileDev {
 				 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
 				 wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
 				 
- driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")).click();
+                 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")).click();
 				 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 			     String RateStatus2=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-			     if(RateStatus2.equalsIgnoreCase("\"Your bulk Rate request has been processed!\""))
+			     if(RateStatus2.contains("Your bulk Rate request has been processed"))
 			     {
-			    	  Reporter.log("<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(+ , %)--</font><font color='blue'>PASS</font></a>", true);
+			    	  Reporter.log("<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(+ , %)--</font><font color='blue'>PASS("+RateStatus2+")</font></a>", true);
 			    	  //Reporter.log("Slected Date Rate Update--PASS");
 			    	  Thread.sleep(1000);
 			    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
@@ -652,7 +592,7 @@ public class MobileDev {
 			     }
 			     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess') and @index='0']")));
 			     break;
-	    	 case 4:
+	    	 case 4://for - and %ge
 	    		 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'ratess')]")).click();
 			     Bulkratecheck=1;
 			     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")));
@@ -682,9 +622,9 @@ public class MobileDev {
 				 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates')]")).click();
 				 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 			     String RateStatus3=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-			     if(RateStatus3.equalsIgnoreCase("\"Your bulk Rate request has been processed!\""))
+			     if(RateStatus3.contains("Your bulk Rate request has been processed"))
 			     {
-			    	  Reporter.log("<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(- , %)--</font><font color='blue'>PASS</font></a>", true);
+			    	  Reporter.log("<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(- , %)--</font><font color='blue'>PASS("+RateStatus3+")</font></a>", true);
 			    	  //Reporter.log("Slected Date Rate Update--PASS");
 			    	  Thread.sleep(1000);
 			    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
@@ -701,10 +641,7 @@ public class MobileDev {
 	    		 
 	    		 
 	    	 } 
-	    	 //driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'tv_start_selected_date')]")).clear();
 	    	
-	         //driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'tv_end_selected_date')]")).clear();
-	    	 //driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'tv_end_selected_date')]")).sendKeys(end);
 	    	}
 	    	 }
 	    
@@ -715,34 +652,35 @@ public class MobileDev {
         
 	    public static void BulkInvUpdate(String invStatus) throws InterruptedException, AWTException
 	    {
-	    	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ImageView[contains(@resource-id,'inventory')]")));
+	    	wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ImageView[contains(@resource-id,'inventory')]")));//waiting for bulk inventory image
 	    	if(invStatus.equalsIgnoreCase("1"))
 	    	 {
 			 driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'inventory')]")).click();
 			 calendarselection();
 			 driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'selcted_rates_inventory') and @text='Select Rate Code']")).click();
 	    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button2') and @text='Done']")));
-	    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button2') and @text='Done']")).click();
-	    	 List<WebElement>TotalRoom=driver.findElements(By.xpath("//android.widget.EditText"));
+	    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button2') and @text='Done']")).click();//rate code select in pop up and click on popup done
+	    	 List<WebElement>TotalRoom=driver.findElements(By.xpath("//android.widget.EditText"));//rooms related to rate code selected put it in the list
 	    	 System.out.println(TotalRoom.size());
 	    	 for(WebElement e:TotalRoom)
 	    	 {
-	    		 e.sendKeys("20");
+	    		 e.click();
+	    		 e.sendKeys("20");//sending 20 to all room types in the list using for each
 	    	 }
-	   
-			 /*robot =new Robot();
+	         // this robot class is used to handle the update bulk inventory option getting hidden on typing inventory to each room type--section outaide for each
+			 robot =new Robot();
 			 robot.keyPress(KeyEvent.VK_CONTROL);
 			 robot.keyPress(KeyEvent.VK_BACK_SPACE);
 			 robot.keyRelease(KeyEvent.VK_CONTROL);
-			 robot.keyRelease(KeyEvent.VK_BACK_SPACE);*/
+			 robot.keyRelease(KeyEvent.VK_BACK_SPACE);
 			 
 			 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates') and @text='Update Bulk INVEntory']")).click();
 			 
 			 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 		     String InventoryStatus=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-		     if(InventoryStatus.startsWith("\"Your bulk Inventory request has been processed!\""))
+		     if(InventoryStatus.contains("Your bulk Inventory request has been processed"))
 		     {
-		          Reporter.log("<font font-family='Times New Roman'>Bulk Inventory Update--</font><font color='blue'>PASS</font></a>", true);
+		          Reporter.log("<font font-family='Times New Roman'>Bulk Inventory Update--</font><font color='blue'>PASS("+InventoryStatus+")</font></a>", true);
 		    	  //Reporter.log("Selected Date Inventory Update--PASS");
 		    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
 		     }
@@ -767,40 +705,35 @@ public class MobileDev {
 	    public static void BulkResUpdate(String resStatus) throws AWTException, InterruptedException
 	    {
 	       
-	    	for(int i=0;i<2;i++)
+	    	for(int i=0;i<2;i++)//i=2 for Open and close
 			{
 	    		 if(resStatus.equalsIgnoreCase("1"))
 	    		 {
 	    			
-	    		 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ImageView[contains(@resource-id,'stopcells')]")));
+	    		 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ImageView[contains(@resource-id,'stopcells')]")));//waiting for bulk restriction update image
 			     driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'stopcells')]")).click();
 			     calendarselection();
 			     driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'selcted_rates') and @text='Select Rate Code']")).click();
-		    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button2') and @text='Done']")));
+		    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.Button[contains(@resource-id,'button2') and @text='Done']")));//rate code selection poup done
 		    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button2') and @text='Done']")).click();
 			     if(i==0)
 			     {
 			    	
 			    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'close_room_restriction') and @text='Close Room']")).click();
 			     }
-			     else
+			     else //2nd loop room opens in this main for loop
 			     {
 			    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'open_room_restriction') and @text='Open Room']")).click();
 			     }
 			    
-			    /* robot =new Robot();
-				 robot.keyPress(KeyEvent.VK_CONTROL);
-				 robot.keyPress(KeyEvent.VK_BACK_SPACE);
-				 robot.keyRelease(KeyEvent.VK_CONTROL);
-				 robot.keyRelease(KeyEvent.VK_BACK_SPACE);*/
 				 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates') and @text='Update Bulk RESTRICTION']")));
 			     driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done_rates') and @text='Update Bulk RESTRICTION']")).click();	
 			     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 			     String restrictionStatus=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-			     if(restrictionStatus.startsWith("Your bulk Restriction request has been processed"))
+			     if(restrictionStatus.contains("Your bulk Restriction request has been processed"))
 			     {
 			    	 
-			    	  Reporter.log("<font font-family='Times New Roman'>Your bulk Restriction Update--</font><font color='blue'>PASS</font></a>", true);
+			    	  Reporter.log("<font font-family='Times New Roman'>Your bulk Restriction Update--</font><font color='blue'>PASS("+restrictionStatus+")</font></a>", true);
 			    	  //Reporter.log("Selected Date Restriction Update--PASS");
 			    	  Thread.sleep(2000);
 			    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
@@ -820,62 +753,17 @@ public class MobileDev {
 	    		 
 	      }
 	    	 
-	    	}
-	    
-	    
+	   }
 	    
 		public static void SlectedrateUpdate(String rateStatus) throws AWTException, InterruptedException
 	    {
-		/*	try
-			{
-	  		 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-			}
-			catch(Exception e)
-			{
-				
-				
-				 RNA=true;
-				 System.out.println(e);
-				
-			}
-			if(RNA)
-			{
-				logout();
-				execute=false;
-			}*/
-            //RNA=RatePresentCheck();
-	    	/*if(RNA)
-	    	{
-	    		System.out.println("Rate Not available");
-	    		logout();
-	    		execute=false;
-	    		
-	    	}*/
-			
-			 //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
-	  		 //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
-			
-			if(execute)
-			{
-				RNA=RatePresentCheck();
-		    	if(RNA)
-		    	{
-		    		execute=false;
-		    		System.out.println("Rate Not available");
-		    		Reporter.log("<font font-family='Times New Roman'>Selected Date Rate Update--</font><font color='red'>FAIL(Rates Not Available)</font></a>", true);
-		    		driver.findElement(By.xpath("//android.widget.ImageView[@content-desc='More options']")).click();
-				    driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'title') and @text='Logout']")).click();
-		    		
-		    		
-		    	}
-			 if(execute)	
-			 {
+		
+		
 	    	 if(rateStatus.equalsIgnoreCase("1"))
 	    	 {
 	    	
-			 int[] day={18,19,20};
-			 for(int d :day)
+			 
+			 for(int d :Rateday)//for updating rates based on dates given in Rateday
 			 {
 			 driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+d+"']")).click();
 			
@@ -896,7 +784,7 @@ public class MobileDev {
 			 //clickon select channel icon button
 			 //-----driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'icon_edit')]")).click();
 			 
-			 //click on update rate button 
+			 //click on update rate button to be visible ..handling by using robot class
 			 robot =new Robot();
 			 Thread.sleep(2000);
 			 robot.keyPress(KeyEvent.VK_CONTROL);
@@ -908,12 +796,12 @@ public class MobileDev {
 			     driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done')]")).click();
 			     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 			     String RateStatus=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-			     if(RateStatus.equalsIgnoreCase("Your Request has been Processed Successfully"))
+			     if(RateStatus.contains("Your Request has been processed"))
 			     {
-			    	  Reporter.log("<font font-family='Times New Roman'>Selected Date Rate Update--</font><font color='blue'>PASS</font></a>", true);
+			    	  Reporter.log("<font font-family='Times New Roman'>Selected Date Rate Update--</font><font color='blue'>PASS("+RateStatus+")</font></a>", true);
 			    	  //Reporter.log("Slected Date Rate Update--PASS");
 			    	  Thread.sleep(2000);
-			    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
+			    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();//click on done popup 
 			     }
 			     else
 			     {
@@ -923,7 +811,7 @@ public class MobileDev {
 			    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
 			     }
 			     
-	  		     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
+	  		     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));//waiting till calendar display
 	    	     wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
 			    //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
 	  		    //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
@@ -935,8 +823,8 @@ public class MobileDev {
 			 }
 	    	 }
 			 }
-	    }
-	    }
+	    
+	    
 	    
 	    
 
@@ -946,28 +834,7 @@ public class MobileDev {
 	    public static void selectedInvUpdate(String invStatus) throws AWTException, InterruptedException
 	    {
 	    	
-	    	/* try
-	    	 {
-	  		 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	    	 }
-	    	 catch(Exception e)
-	    	 {
-	    		 
-	    		 logout();
-	    		 if(RNA)
-	    		 {
-	    			 RNA=false;
-	    		 Reporter.log("<font font-family='Times New Roman'>Rates Not Available</font><font color='red'>FAIL</font></a>", true);
-	    		 }
-	    	 }*/
 	    	
-	    	/*if(RNA)
-	    	{
-	    		execute=false;
-	    	}*/
-	    	 //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
-	    	 //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
 			  if(execute)
 			  {
 				  RNA=RatePresentCheck();
@@ -1009,9 +876,9 @@ public class MobileDev {
 			 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'update_inventory')]")).click();
 			 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 		     String InventoryStatus=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-		     if(InventoryStatus.startsWith("Your Request has been Processed to"))
+		     if(InventoryStatus.contains("Your Request has been processed"))
 		     {
-		    	  Reporter.log("<font font-family='Times New Roman'>Selected Date Inventory Update--</font><font color='blue'>PASS</font></a>", true);
+		    	  Reporter.log("<font font-family='Times New Roman'>Selected Date Inventory Update--</font><font color='blue'>PASS("+InventoryStatus+")</font></a>", true);
 		    	  Thread.sleep(2000);
 		    	  //Reporter.log("Selected Date Inventory Update--PASS");
 		    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
@@ -1047,39 +914,9 @@ public class MobileDev {
 	    
 	    public static void selectedResUpdate(String resStatus) throws InterruptedException, AWTException
 	    {
-	    	//"Your bulk Restriction request has been processed!"
-	    	/*try
-	    	{
-	  		 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	    	}
-	    	 catch(Exception e)
-	    	 {
-	    		 
-	    		 logout();
-	    		 if(RNA)
-	    		 {
-	    			 RNA=false;
-	    		 Reporter.log("<font font-family='Times New Roman'>Rates Not Available</font><font color='red'>FAIL</font></a>", true);
-	    		 }
-	    	 }*/
-	    	 //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
-	    	if(execute)
-	    	{
-	    		RNA=RatePresentCheck();
-		    	if(RNA)
-		    	{
-		    		execute=false;
-		    		System.out.println("Rate Not available");
-		    		Reporter.log("<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='red'>FAIL(Rates Not Available)</font></a>", true);
-		    		driver.findElement(By.xpath("//android.widget.ImageView[@content-desc='More options']")).click();
-				    driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'title') and @text='Logout']")).click();
-		    		
-		    		
-		    	}
-	        if(execute)
-	        {
-	    	for(int i=0;i<2;i++)
+	    	
+	    	
+	    	for(int i=0;i<2;i++)//handling close first and save and open
 			{
 	    		 if(resStatus.equalsIgnoreCase("1"))
 	    		 {
@@ -1104,10 +941,10 @@ public class MobileDev {
 			     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 			     String restrictionStatus=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
 			    //"Your bulk Restriction request has been processed!"
-			     if(restrictionStatus.startsWith("Your Request has been Processed to"))
+			     if(restrictionStatus.contains("Your Request has been processed"))
 			     {
-			    	  Reporter.log("<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS</font></a>", true);
-			    	  //Reporter.log("Selected Date Restriction Update--PASS");
+			    	  Reporter.log("<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS("+restrictionStatus+")</font></a>", true);
+			    	 
 			    	  Thread.sleep(2000);
 			    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
 			     }
@@ -1115,7 +952,7 @@ public class MobileDev {
 			     {
 			    	 Reporter.log("<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='red'>FAIL("+restrictionStatus+")</font></a>", true);
 			    	 Thread.sleep(2000);
-			    	 //Reporter.log("<font color='red'>Selected Date Restriction Update--FAIL("+restrictionStatus+")</font></a>", true);
+			    	
 			    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
 			     }
 			     //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='14']")));
@@ -1128,54 +965,25 @@ public class MobileDev {
 	    		 
 	      }
 	    	 
-	    	}
-	    	}
+	    
 	    }
 	    
 	    
 	    public static void RateDateRangeUpdate(String rateStatus) throws InterruptedException, AWTException
 	    {
-	    /*	try
-	    	{
-	  		 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	    	}
-	    	catch(Exception e)
-	    	 {
-	    		 
-	    		 logout();
-	    		 if(RNA)
-	    		 {
-	    			 RNA=false;
-	    		 Reporter.log("<font font-family='Times New Roman'>Rates Not Available</font><font color='red'>FAIL</font></a>", true);
-	    		 }
-	    	 }*/
-	    	 //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='14']")));
-	  		 //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
-	    	if(execute)
-	    	{ 
-	    		RNA=RatePresentCheck();
-		    	if(RNA)
-		    	{
-		    		execute=false;
-		    		System.out.println("Rate Not available");
-		    		Reporter.log("<font font-family='Times New Roman'>Date Range Rate Update--</font><font color='red'>FAIL(Rates Not Available)</font></a>", true);
-		    		driver.findElement(By.xpath("//android.widget.ImageView[@content-desc='More options']")).click();
-				    driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'title') and @text='Logout']")).click();
-		    		
-		    		
-		    	}
-	    	if(execute)
-	    	{
+	    
+	    	
 	    	if(rateStatus.equalsIgnoreCase("1"))
 	    	 {
 	    	 driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'saverates') and @text='Rate']")).click();
 	    	 calendarselection(); 
-	    	 Actions action=new Actions(driver);
+	    	
 	    	// action.moveToElement(driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'single_rate')]"))).doubleClick().build().perform();
 			 //Update single and double rates,extra child and extra adult
+	    	 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'single_rate')]")).click();
 			 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'single_rate')]")).sendKeys("1000");
-			 //driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'double_rate')]")).sendKeys("6500");
+			 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'double_rate')]")).click();
+			 driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'double_rate')]")).sendKeys("6500");
 			 
 			 //driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'extra_child')]")).sendKeys("510");
 			 //driver.findElement(By.xpath("//android.widget.EditText[contains(@resource-id,'extra_adult')]")).sendKeys("1009");
@@ -1208,12 +1016,12 @@ public class MobileDev {
 			  robot.keyRelease(KeyEvent.VK_CONTROL);
 			  robot.keyRelease(KeyEvent.VK_BACK_SPACE);
 			
-			 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done')]")).click();
+			 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button_done')]")).click();//click on update rate
 			 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 		     String RateStatus=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-		     if(RateStatus.equalsIgnoreCase("Your Request has been Processed Successfully"))
+		     if(RateStatus.contains("Your Request has been processed"))
 		     {
-		    	  Reporter.log("<font font-family='Times New Roman'>Date Range Rate Update--</font><font color='blue'>PASS</font></a>", true);
+		    	  Reporter.log("<font font-family='Times New Roman'>Date Range Rate Update--</font><font color='blue'>PASS("+RateStatus+")</font></a>", true);
 		    	  Thread.sleep(2000);
 		    	  //Reporter.log("Slected Date Rate Update--PASS");
 		    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
@@ -1225,58 +1033,21 @@ public class MobileDev {
 		    	 // Reporter.log("<font color='red'>Slected Date Rate Update--FAIL("+RateStatus+")</font></a>", true);
 		    	 driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
 		     }
-			 //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='14']")));
-	  		 //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
-	  		 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
+			
+	  		 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));//calendar to be visible
 	    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
 			
 	    	 } 
-	    	 //driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'tv_start_selected_date')]")).clear();
+	    	 
 	    	
-	         //driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'tv_end_selected_date')]")).clear();
-	    	 //driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'tv_end_selected_date')]")).sendKeys(end);
-	    	}
-	    	}
 	    }
 	    
 	    
 	    public static void InvDateRange(String invStatus) throws AWTException, InterruptedException
 	    {
-	       /*  try
-	         {
-	  		 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	         }
-	         catch(Exception e)
-	    	 {
-	    		 
-	    		 logout();
-	    		 if(RNA)
-	    		 {
-	    			 RNA=false;
-	    		 Reporter.log("<font font-family='Times New Roman'>Rates Not Available</font><font color='red'>FAIL</font></a>", true);
-	    		 }
-	    	 }*/
-	    	 //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='14']")));
-	  		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
-			 
+	      
 	    	 //update Inventory
-	    	if(execute)
-	    	{
-	    		
-	    		RNA=RatePresentCheck();
-		    	if(RNA)
-		    	{
-		    		execute=false;
-		    		System.out.println("Rate Not available");
-		    		Reporter.log("<font font-family='Times New Roman'>Date Range Inventory Update--</font><font color='red'>FAIL(Rates Not Available)</font></a>", true);
-		    		driver.findElement(By.xpath("//android.widget.ImageView[@content-desc='More options']")).click();
-				    driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'title') and @text='Logout']")).click();
-		    		
-		    		
-		    	}
-		    	if(execute)
-		    	{
+	    	
 	    	 if(invStatus.equalsIgnoreCase("1"))
 	    	 {
 			 driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'saveinventory') and @text='Inventory']")).click();
@@ -1297,9 +1068,9 @@ public class MobileDev {
 			 
 			 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 		     String InventoryStatus=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-		     if(InventoryStatus.startsWith("Your Request has been Processed to"))
+		     if(InventoryStatus.contains("Your Request has been processed"))
 		     {
-		          Reporter.log("<font font-family='Times New Roman'>Date Range Inventory Update--</font><font color='blue'>PASS</font></a>", true);
+		          Reporter.log("<font font-family='Times New Roman'>Date Range Inventory Update--</font><font color='blue'>PASS("+InventoryStatus+")</font></a>", true);
 		          Thread.sleep(2000);
 		          //Reporter.log("Selected Date Inventory Update--PASS");
 		    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
@@ -1323,8 +1094,6 @@ public class MobileDev {
 	    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
 		     
 	    	 }
-			 }
-	    	}
 			
 	    }
 	    
@@ -1333,39 +1102,8 @@ public class MobileDev {
 	   
 	    	for(int i=0;i<2;i++)
 			 {
-	    		 /*try
-	    		 {
-		  		 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-		    	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	    		 }
-	    		 catch(Exception e)
-		    	 {
-		    		 
-		    		 logout();
-		    		 if(RNA)
-		    		 {
-		    			 RNA=false;
-		    		 Reporter.log("<font font-family='Times New Roman'>Rates Not Available</font><font color='red'>FAIL</font></a>", true);
-		    		 }
-		    	 }*/
-		    	 //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'dateTitle')]")));
-	    		 //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='14']")));
-	    		if(execute)
-	    		{
-	    			RNA=RatePresentCheck();
-			    	if(RNA)
-			    	{
-			    		execute=false;
-			    		System.out.println("Rate Not available");
-			    		Reporter.log("<font font-family='Times New Roman'>Date Range Restriction Update--</font><font color='red'>FAIL(Rates Not Available)</font></a>", true);
-			    		driver.findElement(By.xpath("//android.widget.ImageView[@content-desc='More options']")).click();
-					    driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'title') and @text='Logout']")).click();
-			    		
-			    		
-			    	}
-			    	if(execute)
-			    	{
-	    		 
+	    		
+	    		
 	    		if(resStatus.equalsIgnoreCase("1"))
 	    		 {
 	    			 
@@ -1392,9 +1130,9 @@ public class MobileDev {
 			     driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'update_restriction')]")).click();
 			     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")));
 			     String RestrictionStatus=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'message')]")).getText();
-			     if(RestrictionStatus.startsWith("Your Request has been Processed to"))
+			     if(RestrictionStatus.contains("Your Request has been processed"))
 			     {
-			    	  Reporter.log("<font font-family='Times New Roman'>Date Range Restriction Update--</font><font color='blue'>PASS</font></a>", true);
+			    	  Reporter.log("<font font-family='Times New Roman'>Date Range Restriction Update--</font><font color='blue'>PASS("+RestrictionStatus+")</font></a>", true);
 			    	  
 			    	  Thread.sleep(2000);//Reporter.log("Selected Date Restriction Update--PASS");
 			    	  driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
@@ -1414,8 +1152,7 @@ public class MobileDev {
 			   } 
 	    		 
 	        }
-	    		}
-			 }
+	    	
 	    }
 	    
 	    public static void logout()
@@ -1435,41 +1172,45 @@ public class MobileDev {
 	     	  SimpleDateFormat DF = new SimpleDateFormat("dd-MM-yyyy");
 	 	      Calendar RC = Calendar.getInstance();
 	 	      RC.add(Calendar.DATE, 1);
-	 	      String start=DF.format(RC.getTime());
-	 	      System.out.println(start);
+	 	      String start=DF.format(RC.getTime());//dd-MM-yyyy format
+	 	      
 	 	      String stratdate[]=start.split("-");
 	 	      RC.add(Calendar.DATE, 10);
-	 	      String end=DF.format(RC.getTime());
+	 	      String end=DF.format(RC.getTime());//current date +10 days
 	 	  
 	 	      String enddate[]=end.split("-");
-	 	      int stmonth=Integer.parseInt(stratdate[1]);
-	 	      int enmonth=Integer.parseInt(enddate[1]);
+	 	      int stmonth=Integer.parseInt(stratdate[1]);//get month from startdate
+	 	    
+	 	      int enmonth=Integer.parseInt(enddate[1]); //get month from end date
 	 	     //Start Date
-	 	      driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'iv_start_calendar')]")).click();
+	 	      driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'iv_start_calendar')]")).click();//click on calendar
 	 	      Thread.sleep(2000);
 	 	    
-	 	      driver.findElement(By.xpath("//android.view.View[@index='0']")).click();
-	 	      String expectedStartdate=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'date_picker_header_date')]")).getAttribute("text");
-	 	      System.out.println(expectedStartdate);
-	 	      String expStartDate[]=expectedStartdate.split(" ");
-	 	      ActualStartdate=expStartDate[1];
-	 	      System.out.println("Expected date  "+month[stmonth]);
-	 	      System.out.println("Actual Date   "+ActualStartdate);
-	 	     while(!(month[stmonth].equalsIgnoreCase(ActualStartdate)))
+	 	      
+	 	      String expectedStartdate=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'date_picker_header_date')]")).getAttribute("text"); //eg Mon, Jan 29
+	 	      
+	 	      String expStartDate[]=expectedStartdate.split(" ");//splitting on space...mon jan 29
+	 	      ActualStartmonth=expStartDate[1];//jan
+	 	    
+	 	      
+	 	     while(!(month[stmonth].equalsIgnoreCase(ActualStartmonth)))//comparing this with month array (not equals ...if not matching only then it will come inside)
 	 	    {
-	 	    	  System.out.println("inside"+ActualStartdate);
-	 	          driver.findElement(By.xpath("//android.widget.ImageButton[contains(@resource-id,'next')]")).click();
-	 	          driver.findElement(By.xpath("//android.view.View[@index='0']")).click();
-	 	          expectedStartdate=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'date_picker_header_date')]")).getAttribute("text");
-	 	          String expStartDate1[]=expectedStartdate.split(" ");
-	 	          ActualStartdate=expStartDate1[1];
+	 	    	  System.out.println("inside"+ActualStartmonth);
+	 	    	  
+	 	          driver.findElement(By.xpath("//android.widget.ImageButton[contains(@resource-id,'next')]")).click();//click on next month navigation arrow
+	 	          driver.findElement(By.xpath("//android.view.View[@index='0']")).click();//clicking on 1st date of next month bcz header is not updatting just on click of > navigation
+	 	          expectedStartdate=driver.findElement(By.xpath("//android.widget.TextView[contains(@resource-id,'date_picker_header_date')]")).getAttribute("text"); //considering header text
+	 	          String expStartDate1[]=expectedStartdate.split(" ");//splitting again
+	 	          ActualStartmonth=expStartDate1[1];
 	 	        
 	 	    }
-	 	          System.out.println(stratdate[0]+" "+monthdesc[stmonth]+" "+stratdate[2]);
-	 	    	  driver.findElement(By.xpath("//android.view.View[contains(@content-desc,'"+stratdate[0]+" "+monthdesc[stmonth]+" "+stratdate[2]+"')]")).click();
-	 	          driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();
+	 	     
+	 	     //it comes out of while loop when system month and calendar month matches
+	 	         
+	 	    	  driver.findElement(By.xpath("//android.view.View[contains(@content-desc,'"+stratdate[0]+" "+monthdesc[stmonth]+" "+stratdate[2]+"')]")).click();  //content description in ui automate viewer..30 January 2018
+	 	          driver.findElement(By.xpath("//android.widget.Button[contains(@resource-id,'button1')]")).click();//click on ok of start date selection calendar
 	 	    	
-	 	          //end date 
+	 	          //end date same as startdate logic
 		 	      driver.findElement(By.xpath("//android.widget.ImageView[contains(@resource-id,'iv_end_calendar')]")).click();
 		 	      Thread.sleep(2000);
 		 	    
@@ -1478,8 +1219,8 @@ public class MobileDev {
 		 	      System.out.println(expectedEnddate);
 		 	      String expEndDate[]=expectedEnddate.split(" ");
 		 	      ActualEnddate=expEndDate[1];
-		 	      System.out.println("Expected date  "+month[enmonth]);
-		 	      System.out.println("Actual Date   "+ActualEnddate);
+		 	      //System.out.println("Expected date  "+month[enmonth]);
+		 	     // System.out.println("Actual Date   "+ActualEnddate);
 		 	     while(!(month[enmonth].equalsIgnoreCase(ActualEnddate)))
 		 	    {
 		 	    	 System.out.println("inside"+ActualEnddate);
@@ -1496,7 +1237,8 @@ public class MobileDev {
 		 	    	
 	    }
 	    
-	    public static char[] Encryption(String value)
+	    //code to handle password in encrypted format while sending report--starts
+	    public static char[] Encryption(String value)//Test@321
 		{
 		
 			String pass=value;
@@ -1507,22 +1249,21 @@ public class MobileDev {
 			int eni=0;
 			for(char c1:c)
 			{
-				int val=(int)c1+randomNum;
+				int val=(int)c1+randomNum;//considering each character ascii value and adding random number generated
 				System.out.println(String.valueOf(c1)+"---"+val);
-				enc[eni]=(char)val;
-				eni++;
+				enc[eni]=(char)val; //char(160) gives one character ,store encryoted character here 
+				eni++;//to increment position where its encrypted and stored
 				
 			}
 			
-			String encrString=String.valueOf(enc);
-			System.out.println("encr--"+encrString);
+			
+			
 			return enc;
 		}
 		public static String decryption(char[] value)
 		{
+			
 			int dei=0;
-			
-			
 			char dec[]=new char[value.length];
 			for(char c1:value)
 			{
@@ -1534,22 +1275,23 @@ public class MobileDev {
 			String decryValue=String.valueOf(dec);
 			System.out.println("desc--"+decryValue);
 			return decryValue;
+			
 		}
-		
+		 //code to handle password in encrypted format while sending report--ends	
 public  void copyfile() throws IOException
 {
-    System.out.println("sunil");
+    
 	SimpleDateFormat DF = new SimpleDateFormat("dd-MM-yyyy");
     Calendar RC = Calendar.getInstance();
     String start=DF.format(RC.getTime());
-    File source=new File("C:/Users/anil.kumar/Desktop/test-output/Suite/Test.html");
-    System.out.println("anil");
+    File source=new File("C:/Users/qa.test/git/AndroidMobileAutomationSuit/MobileAutomation/test-output/MobileHealth-Jenkins/MobileHealth-Jenkins.html");//default location of the file after execution complete
+   
 	//File source = new File("D:/WorkSpace/ibv4_code/MobileTest/test-output/AndroidMobileAutomation/Mobile Android Automation.html");
-	File dest = new File("D:/Android Daily report/AndroidReport-"+start+".html");
+	File dest = new File("D:/Android Daily report/AndroidReport-"+start+".html");//destination path
 	System.out.println(start);
 	try
 	{
-	Files.copy(source.toPath(), dest.toPath());
+	Files.copy(source.toPath(), dest.toPath());//default location file is copied to this location (to have backup)	
 	}
 	catch(Exception e)
 	{
@@ -1558,8 +1300,8 @@ public  void copyfile() throws IOException
 	    //org.apache.commons.io.FileUtils.copyDirectory(source, dest);
 	
 	}
-
-public  void  ibv4()
+//google code to send report
+public  void  SendMail()
 {try
 {
 	SimpleDateFormat DF = new SimpleDateFormat("dd-MM-yyyy");
@@ -1627,14 +1369,15 @@ public  void  ibv4()
 
 
  }
+
+//code to check whether calendar is displaying or not--starts here
 public static boolean RatePresentCheck()
 {
 	int val=0;
 	try
 	{
 	 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']")));
-	 
+	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.TextView[contains(@resource-id,'name_image') and @text='"+datestr+"']"))); 
 	 RNA=false;
 	 val=1;
 	 return RNA;
@@ -1645,12 +1388,14 @@ public static boolean RatePresentCheck()
 	      return true;
 	    }
 }
+	
+	//code to check whether calendar is displaying or not--ends here
 }
 protected void finalize() throws IOException
 
 {
 	copyfile();
-	ibv4();
+	SendMail();
 // finalization code here
 
 }

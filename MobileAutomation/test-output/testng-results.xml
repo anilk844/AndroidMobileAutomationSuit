@@ -1,155 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" total="4" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Customer Search--</font><font color='blue' >PASS</font></a>]]>
-    </line>
-    <line>
       <![CDATA[<font font-family='Times New Roman'>Statistic Page--</font><font color='blue'>PASS</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Selected Date Rate Update--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Bulk Range Rate Update with combination(+ , 0.0)--</font><font color='blue'>PASS("Your bulk Rate request has been processed!")</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Selected Date Inventory Update--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(- , 0.0)--</font><font color='blue'>PASS("Your bulk Rate request has been processed!")</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(+ , %)--</font><font color='blue'>PASS("Your bulk Rate request has been processed!")</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(- , %)--</font><font color='blue'>PASS("Your bulk Rate request has been processed!")</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Date Range Rate Update--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Bulk Inventory Update--</font><font color='red'>FAIL("No record(s) updated! You are set up on Real Time Inventory from your PMS. Hence you are not allowed to update inventory manually.")</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Date Range Inventory Update--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Your bulk Restriction Update--</font><font color='blue'>PASS("Your bulk Restriction request has been processed!")</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Date Range Restriction Update--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Your bulk Restriction Update--</font><font color='blue'>PASS("Your bulk Restriction request has been processed!")</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Date Range Restriction Update--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Selected Date Rate Update--</font><font color='blue'>PASS(Your Request has been processed successfully)</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Statistic Page--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Selected Date Inventory Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Selected Date Rate Update--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Selected Date Inventory Update--</font><font color='green'>PASS(RealTime Inventory)</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Date Range Rate Update--</font><font color='red'>FAIL(Your request has been processed successfully except for few of the record(s) where Lower Occupancies Rate(s) exceeded Higher Occupancies Rate(s))</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Date Range Inventory Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Customer Search--</font><font color='blue' >PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Date Range Restriction Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
     </line>
     <line>
-      <![CDATA[<font font-family='Times New Roman'>Statistic Page--</font><font color='blue'>PASS</font></a>]]>
-    </line>
-    <line>
-      <![CDATA[<font font-family='Times New Roman'>Customer Search--</font><font color='blue' >PASS</font></a>]]>
-    </line>
-    <line>
-      <![CDATA[<font font-family='Times New Roman'>Statistic Page--</font><font color='blue'>PASS</font></a>]]>
+      <![CDATA[<font font-family='Times New Roman'>Date Range Restriction Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="515829" started-at="2017-04-11T13:16:41Z" finished-at="2017-04-11T13:25:17Z">
+  <suite name="Default suite" duration-ms="650511" started-at="2018-01-24T10:58:17Z" finished-at="2018-01-24T11:09:08Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="515829" started-at="2017-04-11T13:16:41Z" finished-at="2017-04-11T13:25:17Z">
+    <test name="Default test" duration-ms="650511" started-at="2018-01-24T10:58:17Z" finished-at="2018-01-24T11:09:08Z">
       <class name="MobileDev.MobileDev">
-        <test-method status="PASS" signature="startAutomation(java.lang.String, [C, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MobileDev.MobileDev@2ed94a8b]" name="startAutomation" duration-ms="245975" started-at="2017-04-11T18:46:41Z" data-provider="data" finished-at="2017-04-11T18:50:47Z">
+        <test-method status="PASS" signature="startAutomation(java.lang.String, [C, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:MobileDev.MobileDev@3891771e]" name="startAutomation" duration-ms="650478" started-at="2018-01-24T16:28:17Z" data-provider="data" finished-at="2018-01-24T16:39:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[superuser@reznext.com]]>
+                <![CDATA[whiterose@reznext.com]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[C@932bc4a]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Breeze]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[3241]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Customer Search--</font><font color='blue' >PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Statistic Page--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Selected Date Rate Update--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Selected Date Inventory Update--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Date Range Rate Update--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Date Range Inventory Update--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Date Range Restriction Update--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Date Range Restriction Update--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- startAutomation -->
-        <test-method status="FAIL" signature="startAutomation(java.lang.String, [C, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MobileDev.MobileDev@2ed94a8b]" name="startAutomation" duration-ms="139951" started-at="2017-04-11T18:50:47Z" data-provider="data" finished-at="2017-04-11T18:53:07Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[anil.kumarPA@reznext.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[C@57af006c]]>
+                <![CDATA[[C@2584b82d]]>
               </value>
             </param>
             <param index="2">
@@ -174,254 +89,63 @@
             </param>
             <param index="6">
               <value>
-                <![CDATA[Hotel Poornima]]>
+                <![CDATA[White Rose   Bengaluru]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[5162]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 15.05 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
-System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
-Session ID: a109c617-aa0a-475a-949b-41d373b792c4]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 15.05 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
-System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
-Session ID: a109c617-aa0a-475a-949b-41d373b792c4
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at MobileDev.MobileDev.RateDateRangeUpdate(MobileDev.java:1211)
-	at MobileDev.MobileDev.startAutomation(MobileDev.java:253)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
-	at org.testng.TestNG.run(TestNG.java:1009)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Statistic Page--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Selected Date Rate Update--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Selected Date Inventory Update--</font><font color='green'>PASS(RealTime Inventory)</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-            <line>
-              <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS</font></a>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- startAutomation -->
-        <test-method status="PASS" signature="startAutomation(java.lang.String, [C, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MobileDev.MobileDev@2ed94a8b]" name="startAutomation" duration-ms="54745" started-at="2017-04-11T18:53:07Z" data-provider="data" finished-at="2017-04-11T18:54:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[reznextuser@reznext.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[C@d29f28]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Breeze]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[3241]]>
+                <![CDATA[1947]]>
               </value>
             </param>
           </params>
           <reporter-output>
             <line>
-              <![CDATA[<font font-family='Times New Roman'>Customer Search--</font><font color='blue' >PASS</font></a>]]>
-            </line>
-            <line>
               <![CDATA[<font font-family='Times New Roman'>Statistic Page--</font><font color='blue'>PASS</font></a>]]>
             </line>
-          </reporter-output>
-        </test-method> <!-- startAutomation -->
-        <test-method status="FAIL" signature="startAutomation(java.lang.String, [C, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MobileDev.MobileDev@2ed94a8b]" name="startAutomation" duration-ms="75138" started-at="2017-04-11T18:54:02Z" data-provider="data" finished-at="2017-04-11T18:55:17Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[poornimagroup@reznext.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[C@6bedbc4d]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Hotel Poornima]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[5162]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 15.50 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
-System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
-Session ID: a109c617-aa0a-475a-949b-41d373b792c4]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 15.50 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.44.0', revision: '76d78cf', time: '2014-10-23 20:03:00'
-System info: host: 'RezD021', ip: '192.168.4.70', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_72'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities [{appPackage=com.android.launcher3, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=emulator-5554, platform=LINUX, appActivity=com.android.launcher3.Launcher, desired={appPackage=com.android.launcher3, appActivity=com.android.launcher3.Launcher, appium-version=1.4.13.1, platformVersion=6.0.1, platformName=Android, deviceName=Nexus6:5554}, appium-version=1.4.13.1, platformVersion=6.0, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, platformName=Android}]
-Session ID: a109c617-aa0a-475a-949b-41d373b792c4
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at MobileDev.MobileDev.SlectedrateUpdate(MobileDev.java:908)
-	at MobileDev.MobileDev.startAutomation(MobileDev.java:250)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
-	at org.testng.TestNG.run(TestNG.java:1009)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
             <line>
-              <![CDATA[<font font-family='Times New Roman'>Customer Search--</font><font color='blue' >PASS</font></a>]]>
+              <![CDATA[<font font-family='Times New Roman'>Bulk Range Rate Update with combination(+ , 0.0)--</font><font color='blue'>PASS("Your bulk Rate request has been processed!")</font></a>]]>
             </line>
             <line>
-              <![CDATA[<font font-family='Times New Roman'>Statistic Page--</font><font color='blue'>PASS</font></a>]]>
+              <![CDATA[<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(- , 0.0)--</font><font color='blue'>PASS("Your bulk Rate request has been processed!")</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(+ , %)--</font><font color='blue'>PASS("Your bulk Rate request has been processed!")</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>>Bulk Range Rate Update with combination(- , %)--</font><font color='blue'>PASS("Your bulk Rate request has been processed!")</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Bulk Inventory Update--</font><font color='red'>FAIL("No record(s) updated! You are set up on Real Time Inventory from your PMS. Hence you are not allowed to update inventory manually.")</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Your bulk Restriction Update--</font><font color='blue'>PASS("Your bulk Restriction request has been processed!")</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Your bulk Restriction Update--</font><font color='blue'>PASS("Your bulk Restriction request has been processed!")</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Selected Date Rate Update--</font><font color='blue'>PASS(Your Request has been processed successfully)</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Selected Date Inventory Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Selected Date Restriction Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Date Range Rate Update--</font><font color='red'>FAIL(Your request has been processed successfully except for few of the record(s) where Lower Occupancies Rate(s) exceeded Higher Occupancies Rate(s))</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Date Range Inventory Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Date Range Restriction Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
+            </line>
+            <line>
+              <![CDATA[<font font-family='Times New Roman'>Date Range Restriction Update--</font><font color='blue'>PASS(Your Request has been processed to bookings.com,makemytrip.com,PAYTM,travelguru.com.)</font></a>]]>
             </line>
           </reporter-output>
         </test-method> <!-- startAutomation -->
